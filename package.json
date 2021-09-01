@@ -1,0 +1,44 @@
+{
+  "name": "data-structure-examples",
+  "version": "1.0.0",
+  "description": "Use TypeScript to code examples of data structures and algorithms",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack --config ./webpack.prod.config.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oppnys/data-structure-examples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oppnys/data-structure-examples/issues"
+  },
+  "homepage": "https://github.com/oppnys/data-structure-examples#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-syntax-decorators": "^7.14.5",
+    "@babel/preset-env": "^7.14.9",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/javascript-state-machine": "^2.4.3",
+    "@types/jest": "^27.0.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "concurrently": "^6.2.1",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.1.0",
+    "json-loader": "^0.5.7",
+    "nodemon": "^2.0.12",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.3.5",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
