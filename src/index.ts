@@ -1,5 +1,5 @@
-import {sum} from './utils'
+import { sum } from './utils';
 
-console.log(`hello world`)
-
-console.log(sum(1, 1))
+const total = sum(1, 1);
+console.log(total);
+console.log('hello world');
