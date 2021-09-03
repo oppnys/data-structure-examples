@@ -5,7 +5,7 @@
  *
  * 示例：
  *
- * ```
+ * ```js
  * 输入："Let's take LeetCode contest"
  * 输出："s'teL ekat edoCteeL tsetnoc"
  * ```
@@ -22,3 +22,5 @@ export default function reverseString(str: string): string {
     return codeArr.reverse().join('');
   }).join(' ');
 }
+
+// 6 * 2.8 = 16.8元。
