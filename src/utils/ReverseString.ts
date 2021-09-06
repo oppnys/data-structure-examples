@@ -22,5 +22,3 @@ export default function reverseString(str: string): string {
     return codeArr.reverse().join('');
   }).join(' ');
 }
-
-// 6 * 2.8 = 16.8元。
