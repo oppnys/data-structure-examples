@@ -16,9 +16,6 @@
  *
  */
 export default function reverseString(str: string): string {
-  const strArr: Array<string> = str.split(' ');
-  return strArr.map((code) => {
-    const codeArr = code.split('');
-    return codeArr.reverse().join('');
-  }).join(' ');
+  const words: Array<string> = str.split(/\s/g);
+  return words.map((word) => word.split('').reverse().join('')).join(' ');
 }
