@@ -26,5 +26,15 @@
  * @return number
  */
 export default function canPlaceFlowers(flowerbed: Array<number>, n: number): boolean {
-  return Boolean(flowerbed[0] * n);
+  let max = 0;
+  for (let i = 0, len = flowerbed.length; i < len; i++) {
+    if (i === 0) {
+      if (flowerbed[i] === 0 && flowerbed[i + 1] === 0) {
+        max += 1;
+      }
+    } else if (flowerbed[i] === 0 && (flowerbed[i - 1] === 0 && flowerbed[i + 1] === 0)) {
+      max += 1;
+    }
+  }
+  return max >= n;
 }

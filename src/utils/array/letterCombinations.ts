@@ -6,21 +6,21 @@
  * ![17_telephone_keypad](./17_telephone_keypad.png)
  *
  * 示例 1：
-  ```
-   输入：digits = "23"
-   输出：["ad","ae","af","bd","be","bf","cd","ce","cf"]
-  ```
+ ```
+ 输入：digits = "23"
+ 输出：["ad","ae","af","bd","be","bf","cd","ce","cf"]
+ ```
  * 示例 2：
-   ```
-   输入：digits = ""
-   输出：[]
-   ```
+ ```
+ 输入：digits = ""
+ 输出：[]
+ ```
 
  * 示例 3：
-  ```
-   输入：digits = "2"
-   输出：["a","b","c"]
-  ```
+ ```
+ 输入：digits = "2"
+ 输出：["a","b","c"]
+ ```
 
  提示：
  * * 0 <= digits.length <= 4
@@ -28,6 +28,22 @@
  *
  * @param digits
  */
-export default function letterCombinations(digits: string) {
-  return digits;
+export default function letterCombinations(digits: string): Array<string> {
+  const map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wzyz'];
+  const keyMap: Array<Array<string>> = digits.split('').map((num) => map[Number(num)].split(''));
+  const gen = (result: Array<Array<string>>) => {
+    if (result.length <= 1) {
+      return;
+    }
+    const tmpl: Array<string> = [];
+    for (let i = 0; i < result[0].length; i++) {
+      for (let j = 0; j < result[1].length; j++) {
+        tmpl.push(`${result[0][i]}${result[1][j]}`);
+      }
+    }
+    result.splice(0, 2, tmpl);
+    gen(result);
+  };
+  gen(keyMap);
+  return digits ? keyMap[0] : [];
 }

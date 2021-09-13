@@ -9,47 +9,62 @@
  * 仅当你可选的 X >= 2 时返回 true。
  *
  * 示例 1：
-    ```
-     输入：[1,2,3,4,4,3,2,1]
-     输出：true
-    ```
+ ```
+ 输入：[1,2,3,4,4,3,2,1]
+ 输出：true
+ ```
  * 解释：可行的分组是 [1,1]，[2,2]，[3,3]，[4,4]
  *
  * 示例 2：
-    ```
-    输入：[1,1,1,2,2,2,3,3]
-    输出：false
-    ```
+ ```
+ 输入：[1,1,1,2,2,2,3,3]
+ 输出：false
+ ```
  * 解释：没有满足要求的分组。
  *
  * 示例 3：
-    ```
-    输入：[1]
-    输出：false
-    ```
+ ```
+ 输入：[1]
+ 输出：false
+ ```
  * 解释：没有满足要求的分组。
  *
  * 示例 4：
-    ```
-    输入：[1,1]
-    输出：true
-    ```
+ ```
+ 输入：[1,1]
+ 输出：true
+ ```
  * 解释：可行的分组是 [1,1]
  * 示例 5：
-    ```
-     输入：[1,1,2,2,2,2]
-     输出：true
-    ```
+ ```
+ 输入：[1,1,2,2,2,2]
+ 输出：true
+ ```
  * 解释：可行的分组是 [1,1]，[2,2]，[2,2]
  *
  * 提示：
-    ```
-     1. 1 <= deck.length <= 10000
-     2. 0 <= deck[i] < 10000
-    ```
+ ```
+ 1. 1 <= deck.length <= 10000
+ 2. 0 <= deck[i] < 10000
+ ```
  *
  * @param deck
  */
 export default function hasGroupSizeX(deck: Array<number>): boolean {
-  return Boolean(deck);
+  // 进行从小到大的排序
+  deck.sort((a, b) => a - b);
+  const result = [];
+  for (let i = 0, len = deck.length; i < len; i++) {
+    const tmp = [deck[i]];
+    for (let j = i + 1; j < len; j++) {
+      if (deck[i] === deck[j]) {
+        tmp.push(deck[i]);
+        i++;
+      }
+    }
+    result.push(tmp.length);
+  }
+  const min = Math.min.apply(null, result);
+
+  return min >= 2 && result.every((len) => len % min === 0);
 }
