@@ -18,5 +18,7 @@ module.exports = {
   rules: {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'no-plusplus': 'off',
+    'no-restricted-properties': 'off',
   },
 };
