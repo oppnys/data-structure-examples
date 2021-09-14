@@ -20,5 +20,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'no-plusplus': 'off',
     'no-restricted-properties': 'off',
+    'no-param-reassign': 'off',
   },
 };
