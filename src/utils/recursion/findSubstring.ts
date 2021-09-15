@@ -33,5 +33,20 @@
  * @param words
  */
 export default function findSubstring(s: string, words: Array<string>): Array<number> {
-  return [0];
+  const r: Array<string> = [];
+  const range = (cur: Array<string>, subArr: Array<string>) => {
+    // 组合的后的长度等于原单词数组的长度表示一个递归完成
+    if (cur.length === words.length) {
+      r.push(cur.join(''));
+    } else {
+      subArr.forEach((sub, index) => {
+        const tmp: Array<string> = JSON.parse(JSON.stringify(subArr));
+        tmp.splice(index, 1);
+        range(cur.concat(sub), tmp);
+      });
+    }
+  };
+  range([], words);
+
+  return r.map((str) => s.indexOf(str)).filter((idx) => idx !== -1).sort((a, b) => a - b);
 }

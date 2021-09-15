@@ -10,6 +10,8 @@ import choice from './utils/sort/choice';
 import maximumGap from './utils/sort/maximumGap';
 import findXthLargest from './utils/sort/findXthLargest';
 import firstMissingPositive from './utils/sort/firstMissingPositive';
+import restoreIpAddresses from './utils/recursion/restoreIpAddresses';
+import findSubstring from './utils/recursion/findSubstring';
 
 const app = document.querySelector('#app');
 if (app) app.append(inputElement);
@@ -54,3 +56,11 @@ console.log('findXthLargest([3, 2, 1, 5, 6, 4], 2): ', xthLargest);
 
 const missingPositive = firstMissingPositive([1, 2, 0]);
 console.log(' firstMissingPositive([1,2,0]):', missingPositive);
+
+const ips = restoreIpAddresses('1111');
+console.log("restoreIpAddresses('1111'): ", ips);
+
+const s = 'barfoothefoobarman';
+const words = ['foo', 'bar'];
+const numbers = findSubstring(s, words);
+console.log('findSubstring', numbers);

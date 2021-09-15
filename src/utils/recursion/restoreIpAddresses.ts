@@ -36,7 +36,24 @@
  0 <= s.length <= 3000
  s 仅由数字组成
  ```
+ * @param s
  */
 export default function restoreIpAddresses(s: string): Array<string> {
-  return [s];
+  const ips: Array<string> = [];
+  const search = (ip: Array<number>, sub: string) => {
+    // eslint-disable-next-line no-useless-return
+    if (sub.length > 12) return;
+    if (ip.length === 4 && ip.join('') === s) {
+      ips.push(ip.join('.'));
+    } else {
+      for (let i = 0, len = Math.min(3, sub.length), tmp; i < len; i++) {
+        tmp = sub.substr(0, i + 1);
+        if (+tmp - 256 < 0) {
+          search(ip.concat([+tmp]), sub.substr(i + 1));
+        }
+      }
+    }
+  };
+  search([], s);
+  return ips;
 }
