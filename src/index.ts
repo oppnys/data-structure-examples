@@ -12,6 +12,7 @@ import findXthLargest from './utils/sort/findXthLargest';
 import firstMissingPositive from './utils/sort/firstMissingPositive';
 import restoreIpAddresses from './utils/recursion/restoreIpAddresses';
 import findSubstring from './utils/recursion/findSubstring';
+import isValid from './utils/stack/isValid';
 
 const app = document.querySelector('#app');
 if (app) app.append(inputElement);
@@ -64,3 +65,6 @@ const s = 'barfoothefoobarman';
 const words = ['foo', 'bar'];
 const numbers = findSubstring(s, words);
 console.log('findSubstring', numbers);
+
+const valid = isValid('{()}');
+console.log('isValid("{()}"', valid);
