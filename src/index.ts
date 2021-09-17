@@ -1,5 +1,4 @@
 import inputElement from './dom/Input';
-import { sum } from './utils';
 import reverseString from './utils/string/ReverseString';
 import grayCode from './utils/array/grayCode';
 import canPlaceFlowers from './utils/array/canPlaceFlowers';
@@ -13,15 +12,13 @@ import firstMissingPositive from './utils/sort/firstMissingPositive';
 import restoreIpAddresses from './utils/recursion/restoreIpAddresses';
 import findSubstring from './utils/recursion/findSubstring';
 import isValid from './utils/stack/isValid';
+import firstUniqCharTest from './utils/queue/firstUniqChar';
 
 const app = document.querySelector('#app');
 if (app) app.append(inputElement);
 
 console.log('Usage: ');
 console.log('------------------------------');
-
-const total = sum(1, 1);
-console.log(`sum(1, 1): ${total}`);
 
 const str = 'Let\'s take LeetCode contest';
 console.log(`reverse(Let's take LeetCode contest): ${reverseString(str)}`);
@@ -68,3 +65,9 @@ console.log('findSubstring', numbers);
 
 const valid = isValid('{()}');
 console.log('isValid("{()}"', valid);
+
+console.time('firstUniqCharTest');
+const ss = 'aabb';
+const idx = firstUniqCharTest(ss);
+console.timeEnd('firstUniqCharTest');
+console.log(idx);
