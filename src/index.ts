@@ -14,6 +14,8 @@ import findSubstring from './utils/recursion/findSubstring';
 import isValid from './utils/stack/isValid';
 import firstUniqCharTest from './utils/queue/firstUniqChar';
 import log from './utils/log';
+import initLinkedList, { ListNode } from './utils/linked-list';
+import deleteDuplicates from './utils/linked-list/deleteDuplicates';
 
 const app = document.querySelector('#app');
 if (app) app.append(inputElement);
@@ -72,3 +74,15 @@ const ss = 'aabb';
 const idx = firstUniqCharTest(ss);
 console.timeEnd('firstUniqCharTest');
 log('firstUniqCharTest(ss)', idx);
+
+log('initLinkedList', initLinkedList());
+
+const o6 = new ListNode(6, null);
+const o5 = new ListNode(4, o6);
+const o4 = new ListNode(4, o5);
+const o3 = new ListNode(4, o4);
+const o2 = new ListNode(2, o3);
+const o1 = new ListNode(1, o2);
+
+const oo = deleteDuplicates(o1);
+log('deleteDuplicates(o3): \n', JSON.stringify(oo, null, 3));
