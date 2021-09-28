@@ -19,6 +19,13 @@ import deleteDuplicates from './utils/linked-list/deleteDuplicates';
 import lengthOfLongestSubstring from './utils/map/lengthOfLongestSubstring';
 import minWindow from './utils/map/minWindow';
 
+import { bTree, tree } from './utils/tree';
+import dfs from './utils/tree/dfs';
+import bfs from './utils/tree/bfs';
+import preorder from './utils/tree/preorder';
+import inorder from './utils/tree/inorder';
+import postorder from './utils/tree/postorder';
+
 const app = document.querySelector('#app');
 if (app) app.append(inputElement);
 
@@ -94,3 +101,18 @@ log('lengthOfLongestSubstring(\'abcabcbb\')', len);
 
 const minS = minWindow('ADOBECODEBANC', 'ABC');
 log("minWindow('ADOBECODEBANC', 'ABC'): ", minS);
+
+log('Tree: ');
+log('dfs: ');
+dfs(tree);
+log('bfs: ');
+bfs(tree);
+
+log('Binary Tree');
+log('', JSON.stringify(bTree, null, 3));
+log('preorder');
+preorder(bTree);
+log('inorder');
+inorder(bTree);
+log('postorder');
+postorder(bTree);
