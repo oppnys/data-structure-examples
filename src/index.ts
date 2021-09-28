@@ -17,6 +17,7 @@ import log from './utils/log';
 import initLinkedList, { ListNode } from './utils/linked-list';
 import deleteDuplicates from './utils/linked-list/deleteDuplicates';
 import lengthOfLongestSubstring from './utils/map/lengthOfLongestSubstring';
+import minWindow from './utils/map/minWindow';
 
 const app = document.querySelector('#app');
 if (app) app.append(inputElement);
@@ -90,3 +91,6 @@ log('deleteDuplicates(o3): \n', JSON.stringify(oo, null, 3));
 
 const len = lengthOfLongestSubstring('abcabcbb');
 log('lengthOfLongestSubstring(\'abcabcbb\')', len);
+
+const minS = minWindow('ADOBECODEBANC', 'ABC');
+log("minWindow('ADOBECODEBANC', 'ABC'): ", minS);

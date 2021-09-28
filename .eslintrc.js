@@ -21,5 +21,6 @@ module.exports = {
     'no-plusplus': 'off',
     'no-restricted-properties': 'off',
     'no-param-reassign': 'off',
+    'no-restricted-syntax': 'off',
   },
 };
