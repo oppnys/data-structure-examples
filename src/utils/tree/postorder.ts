@@ -1,5 +1,9 @@
 import { BinaryTree } from './index';
 
+/**
+ * 后序遍历 左 右 中
+ * @param root
+ */
 export default function postorder(root: BinaryTree) {
   if (!root) return;
   postorder(root.left as BinaryTree);
