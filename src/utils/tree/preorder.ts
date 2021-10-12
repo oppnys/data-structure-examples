@@ -22,11 +22,11 @@ import { BinaryTree } from './index';
  */
 export default function preorder(root: BinaryTree) {
   if (!root) return;
-  const stock = [root];
-  while (stock.length) {
-    const n = stock.pop() as BinaryTree;
+  const stack = [root];
+  while (stack.length) {
+    const n = stack.pop() as BinaryTree;
     console.log(n?.value);
-    if (n.right) stock.push(n.right);
-    if (n.left) stock.push(n.left);
+    if (n.right) stack.push(n.right);
+    if (n.left) stack.push(n.left);
   }
 }
