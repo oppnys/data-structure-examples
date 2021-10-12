@@ -25,6 +25,8 @@ import bfs from './utils/tree/bfs';
 import preorder from './utils/tree/preorder';
 import inorder from './utils/tree/inorder';
 import postorder from './utils/tree/postorder';
+import graphDfs from './utils/graph/dfs';
+import graphBfs from './utils/graph/bfs';
 
 const app = document.querySelector('#app');
 if (app) app.append(inputElement);
@@ -116,3 +118,9 @@ log('inorder');
 inorder(bTree);
 log('postorder');
 postorder(bTree);
+
+log('graphDfs(2): ');
+graphDfs(2);
+
+log('graphBfs(2): ');
+graphBfs(2);
